@@ -101,3 +101,8 @@ def test_divide_not_enough_elements_error():
         stack.divide()
     assert str(e.value) == NOT_ENOUGH_ELEMENTS_ERROR_MSG.format(2)
 
+
+def test_repr_function():
+    stack = Stack([1, 2])
+    assert str(stack) == '[1, 2]'
+
