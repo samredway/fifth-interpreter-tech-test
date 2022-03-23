@@ -2,6 +2,7 @@
 Contains the core fifth interpreter functionality
 """
 
+from typing import Tuple, Optional
 from fifth.stack import Stack, StackError
 
 
@@ -66,7 +67,7 @@ class FifthInterpreter:
             raise CommandError()
 
     @staticmethod
-    def _parse_user_input(user_input: str):
+    def _parse_user_input(user_input: str) -> Tuple[str, Optional[int]]:
         words = user_input.split(' ')
         if len(words) > 2:
             raise CommandError()
